@@ -4,27 +4,105 @@
     <meta charset="UTF-8">
     <title>Index - Hangman</title>
 
-    <script src="assets/javascript/game.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   </head>
-  
+
   <body>
 
-    <h1>Hangman Game</h1>
+  <!-- Overall Bootstrap Grid -->
+  <div class="container">
 
-    <h2>Here's your clue:  
-      <p ID="game"></p>
-    </h2>
+    <!-- Jumbotron with Title -->
+    <div class="jumbotron" style="background-image: url(assets/images/constitution.png);">
+      <h1 class="text-center"><strong>Let's play Hangman!</strong></h1>
+      <h4 class="text-center">US States Edition</h4>
+      <hr>
 
-    <h2> Here's a message:
-      <p ID="message">
-      </p>
-    </h2>
+    </div>
+    <div class="row">
 
-    <h2> Here's your wrong guesses:
-      <p ID="wrongguesses">
-      </p>
-    </h2>
+      <!-- Left Panel -->
+      <div class="col-lg-6">
 
+        <!-- Shows the Gameboard -->
+
+          <div class="card-header">
+            <h3 class="card-title">Here's your gameboard, guess the state</h3>
+          </div>
+          <div class="card-block">
+            <div class="text-center">
+                <p ID="game"></p>
+
+            </div>
+          </div>
+
+
+        <!-- This is a list of wrong guesses -->
+
+          <div class="card-header">
+            <h3 class="card-title">Wrong guess list</h3>
+          </div>
+          <div class="card-block">
+            <div class="text-center">
+                <p ID="wrongguesses"></p>
+
+            </div>
+          </div>
+
+
+        <!-- Messages to the user -->
+
+          <div class="card-header">
+            <h3 class="card-title">Messages</h3>
+          </div>
+          <div class="card-block">
+            <div class="text-center">
+              <p ID="message"></p>
+            </div>
+          </div>
+
+
+        <!-- Guesses Remaining -->
+
+          <div class="card-header">
+            <h3 class="card-title">Guesses Remaining</h3>
+          </div>
+          <div class="card-block">
+            <div class="text-center">
+              <p ID="remaining"></p>
+            </div>
+          </div>
+        </div>
+
+
+
+      <!-- Right Panel (Captain Planet Hero)-->
+      <div class="col-lg-6">
+
+        <!-- Captain Planet Image -->
+        <img src="nothing" ID="image" alt="hangman image jpg" class="hangmanimage" style="position:absolute; top:50px; left: 80px; z-index: -20; height: 300px">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+
+      <!-- blank space -->
+      <div class="col-lg-5">
+      </div>
+      <div class="col-lg-1">
+        <button type="button" class="btn btn-success restart-button" onclick="reloadFunction()">Start Over</button>
+      </div>
+    </div>
+
+
+
+   <script type="text/javascript" src="assets/javascript/game.js"></script>
   </body>
+
 </html>
