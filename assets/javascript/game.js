@@ -1,12 +1,13 @@
 
 // here's my list of states
-var StateArray = ["New Hampshire", "Vermont", "Maine", "South Carolina", "New York"];  
+var StateArray = ["New Hampshire", "Vermont", "Maine", "South Carolina", "New York", "Rhode Island", "Florida", "Mississippi", 
+"New Jersey", "Delaware", "Virginia", "West Virginia", "North Carolina", "California", "Arizona"];  
 
 // here's some words of encouragement
-var encouragementArray = ["Nice!", "Yup, you got it!", "Correct!", "You're a Champ!", "Yes!", "Nice One!"];
+var encouragementArray = ["Nice!", "Yup, you got it!", "Correct!", "You're a Champ!", "Yes!", "Nice One!", "You're so smart!"];
 
 // here's some negative stuff for a wrong guess
-var wrongguessText = ["c'mon, use your head!", "nope, not in the word...", "wrong.  You're not really good at this, are you?", "try again"];
+var wrongguessText = ["c'mon, use your head!", "nope, not in the word...", "wrong.  You're not really good at this, are you?", "try again", "nope"];
 
 // here's some text for repeated guesses
 var repeatText = ["O.K., try something new already!", "You already guessed that", "There's more letters you can try, quite repeating", "Pay attention, you already guessed that!"];
@@ -64,11 +65,6 @@ document.getElementById("remaining").textContent = guessesRemaining;
 document.getElementById("image").src = "assets/images/hangman" + wrongcount + ".jpg";
 
 
-// console.log("Answer Array:   " + answerArray);
-// console.log("Correct Answer (string):  " + answerString);
-// console.log("gameboard Array:   " + gameboard);
-// console.log("Current Game Status (string):  " + gameboardString);
-
 //get input from user
 // This function is run whenever the user presses a key.
 document.onkeyup = function(event) {
@@ -78,20 +74,17 @@ document.onkeyup = function(event) {
   var userGuessCode = event.keyCode;
   var wrongGuess;    
 
-
+console.log("userGuess: " + userGuess);
+console.log("userGuessCode: " + userGuessCode);
 //determine if the choice is a letter
-  if (userGuessCode >= 65 && event.keyCode <= 90) {
-    console.log ("letter pressed!");
+  if (userGuessCode <= 64 || userGuessCode >= 91) {
+    document.getElementById("message").textContent = "that's not a letter, try again";
   }
     else {
 //    alert ("you must press a letter!");
-    document.getElementById("message").textContent = "press a key!";
-  }
 
 
 // check to see if the user has already tried that letter
-
-  console.log ("here's the wrong list before the logic: " + wrongList);
 
   if ((wrongList.indexOf(userGuess) != "-1") || (gameboard.indexOf(userGuess) != "-1")){
     document.getElementById("message").textContent = repeatText[Math.floor(Math.random()*repeatText.length)];
@@ -142,6 +135,7 @@ document.onkeyup = function(event) {
     }
           
   }
+}
 
   function reloadFunction() {
     location.reload();

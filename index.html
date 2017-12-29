@@ -35,8 +35,8 @@
             <h3 class="card-title">Here's your gameboard, guess the state</h3>
           </div>
           <div class="card-block">
-            <div class="text-center">
-                <p ID="game"></p>
+            <div class="text-center" font-size="50px">
+                <h2 ID="game"></h2>
 
             </div>
           </div>
@@ -49,7 +49,7 @@
           </div>
           <div class="card-block">
             <div class="text-center">
-                <p ID="wrongguesses"></p>
+                <h2 ID="wrongguesses"></h2>
 
             </div>
           </div>
@@ -62,7 +62,7 @@
           </div>
           <div class="card-block">
             <div class="text-center">
-              <p ID="message"></p>
+              <h2 ID="message"></h2>
             </div>
           </div>
 
@@ -74,18 +74,19 @@
           </div>
           <div class="card-block">
             <div class="text-center">
-              <p ID="remaining"></p>
+              <h2 ID="remaining"></h2>
             </div>
           </div>
         </div>
 
 
 
-      <!-- Right Panel (Captain Planet Hero)-->
+      <!-- Right Panel -->
       <div class="col-lg-6">
 
-        <!-- Captain Planet Image -->
-        <img src="nothing" ID="image" alt="hangman image jpg" class="hangmanimage" style="position:absolute; top:50px; left: 80px; z-index: -20; height: 300px">
+        <!-- Hangman Image -->
+        <img ID="image" alt="hangman image jpg" class="hangmanimage">
+
       </div>
     </div>
   </div>
@@ -95,6 +96,8 @@
       <!-- blank space -->
       <div class="col-lg-5">
       </div>
+
+      <!-- Reset Button -->
       <div class="col-lg-1">
         <button type="button" class="btn btn-success restart-button" onclick="reloadFunction()">Start Over</button>
       </div>
